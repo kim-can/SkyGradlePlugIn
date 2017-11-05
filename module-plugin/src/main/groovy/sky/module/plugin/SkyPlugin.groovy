@@ -12,7 +12,6 @@ public class SkyPlugin implements Plugin<Project> {
 
     @Override
     public void apply(Project project) {
-
         String taskNames = project.gradle.startParameter.taskNames.toString()
         System.out.println("taskNames is " + taskNames);
         String module = project.path.replace(":", "")
@@ -24,17 +23,14 @@ public class SkyPlugin implements Plugin<Project> {
         }
 
         String resourcePrefixS = module.split("_")[moduleLength - 1] + "_";
-        System.out.println("resourcePrefixS is " + module);
+        System.out.println("resourcePrefixS is " + resourcePrefixS);
 
         if (!project.hasProperty("isRunAlone")) {
             throw new RuntimeException("you should set isRunAlone in " + module + "'s gradle.properties")
         }
 
-        boolean isRunAlone = project.properties.get("isRunAlone")
-
-        if (project.hasProperty("isJenkinsRunAlone")) { //如果存在自动化打包
-            isRunAlone = project.properties.get("isJenkinsRunAlone")
-        }
+        boolean isRunAlone = Boolean.valueOf(project.properties.get("isRunAlone"))
+        System.out.println("isRunAlone 参数是:" + isRunAlone);
 
         if (isRunAlone) {
             project.apply plugin: 'com.android.application'
