@@ -3,7 +3,7 @@
 
 版本说明
 -----------------------------------
-### 1.0.0
+### 3.1.0 
 
-    isRunAlone 本地属性 切换module 状态
-    isJenkinsRunAlone 远程属性 切换module 状态 -- 专门用于jenkins打包
+    isRunAlone  切换module 状态
+    skyVersion  sky架构版本
