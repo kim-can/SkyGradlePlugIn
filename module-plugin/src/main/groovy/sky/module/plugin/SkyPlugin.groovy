@@ -47,6 +47,7 @@ public class SkyPlugin implements Plugin<Project> {
                 }
             }
             project.android.resourcePrefix resourcePrefixS
+
         } else {
             project.apply plugin: 'com.android.library'
             System.out.println("apply plugin is " + 'com.android.library')
@@ -61,13 +62,13 @@ public class SkyPlugin implements Plugin<Project> {
                 }
             }
             project.android.resourcePrefix resourcePrefixS
+        }
 
-            project.dependencies {
-                // sky
-                compile "com.jincanshen:sky:$skyVersion"
-                // sky注解解析
-                annotationProcessor "com.jincanshen:sky-compiler:$skyVersion"
-            }
+        project.dependencies {
+            // sky
+            compile "com.jincanshen:sky:$skyVersion"
+            // sky注解解析
+            annotationProcessor "com.jincanshen:sky-compiler:$skyVersion"
         }
     }
 
