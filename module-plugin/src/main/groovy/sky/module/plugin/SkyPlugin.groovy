@@ -8,10 +8,10 @@ import org.gradle.api.Project
  * @version 1.0 on 2017-11-05 上午11:58
  * @see SkyPlugin
  */
-public class SkyPlugin implements Plugin<Project> {
+class SkyPlugin implements Plugin<Project> {
 
     @Override
-    public void apply(Project project) {
+    void apply(Project project) {
         String taskNames = project.gradle.startParameter.taskNames.toString()
         System.out.println("taskNames is " + taskNames)
         String module = project.path.replace(":", "")
@@ -66,7 +66,7 @@ public class SkyPlugin implements Plugin<Project> {
 
         project.dependencies {
             // sky
-            compile "com.jincanshen:sky:$skyVersion"
+            api "com.jincanshen:sky:$skyVersion"
             // sky注解解析
             annotationProcessor "com.jincanshen:sky-compiler:$skyVersion"
         }
