@@ -3,16 +3,18 @@
 buildscript {
     repositories {
         jcenter()
+        mavenCentral()
+        google()
         flatDir  name:'module-plugin',dir:"module-plugin/module-plugin/libs"
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.3'
+        classpath 'com.android.tools.build:gradle:3.0.1'
         //为上传到jcenter依赖库
         classpath 'com.novoda:bintray-release:0.3.4'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
 
-        classpath 'sky:module-plugin:1.0'
+        //classpath 'sky:module-plugin:3.1.0'
     }
 }
 

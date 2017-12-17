@@ -36,6 +36,7 @@ class SkyPlugin implements Plugin<Project> {
         boolean isRunAlone = Boolean.valueOf(project.properties.get("isRunAlone"))
         String skyVersion = String.valueOf(project.properties.get("skyVersion"))
         System.out.println("isRunAlone 参数是:" + isRunAlone)
+        System.out.println("skyVersion 参数是:" + skyVersion)
 
         if (isRunAlone) {
             project.apply plugin: 'com.android.application'
